@@ -1,3 +1,7 @@
+navigator.geolocation.getCurrentPosition((position) => {
+    console.log(position)
+});
+
 const diaSemana = document.getElementById('dia-semana');
 const dataAtual = document.getElementById('data-atual');
 const horaAtual = document.getElementById('hora-atual');
@@ -11,6 +15,10 @@ btnRegistrarPonto.addEventListener("click", register);
 dataAtual.textContent = getCurrentDate();
 diaSemana.textContent = getWeekDay();
 dialogData.textContent = getCurrentDate();
+
+function userDenied() {
+        // implementar func pra verificação
+}
 
 function updateContentHour() {
     dialogHora.textContent = getCurrentTime();
