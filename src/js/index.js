@@ -1,11 +1,29 @@
 const diaSemana = document.getElementById('dia-semana');
 const dataAtual = document.getElementById('data-atual');
 const horaAtual = document.getElementById('hora-atual');
+const btnRegistrarPonto = document.getElementById("btn-registrar-ponto")
+const dialogPonto = document.getElementById("dialog-ponto");
+const dialogData = document.getElementById("dialog-data-ponto")
+const dialogHora = document.getElementById("dialog-hora-ponto")
+
+btnRegistrarPonto.addEventListener("click", register);
 
 dataAtual.textContent = getCurrentDate();
 diaSemana.textContent = getWeekDay();
+dialogData.textContent = getCurrentDate();
+
 function updateContentHour() {
+    dialogHora.textContent = getCurrentTime();
     horaAtual.textContent = getCurrentTime();
+}
+
+const btnDialogFechar = document.getElementById("dialog-fechar");
+btnDialogFechar.addEventListener("click", () => {
+    dialogPonto.close();
+})
+
+function register() {
+    dialogPonto.showModal();
 }
 
 // padrao hora:min:seg
