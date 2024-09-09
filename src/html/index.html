@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <link rel="stylesheet" href="../style/style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Ponto Eletrônico</title>
-</head>
-<body>
-    <div class="container">
-        <p id="dia-semana">${`day`}</p>
-        <p id="data-atual"></p>
-        <p id="hora-atual"></p>
-    </div>
-    <button id="btn-registrar-ponto">Registrar ponto</button>
 
-    <dialog id="dialog-ponto">
-        <div id="dialog-content">
-        <p id="dialog-data-ponto">Data</p>
-        <p id="dialog-hora-ponto">Hora</p>
-        <button class="dialog-buttons">Entrada</button>
-        <button class="dialog-buttons">Saida</button>
-        <button id="dialog-fechar">&#10006</button>
-        </div>
-    </dialog>
+<head>
+  <link rel="stylesheet" href="../style/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Ponto Eletrônico</title>
+</head>
+
+<body>
+  <div class="container">
+    <p id="dia-semana">${`day`}</p>
+    <p id="data-atual"></p>
+    <p id="hora-atual"></p>
+  </div>
+  <button id="btn-registrar-ponto">Registrar ponto</button>
+
+  <dialog id="dialog-ponto">
+    <div id="dialog-content">
+      <p id="dialog-data-ponto">Data</p>
+      <p id="dialog-hora-ponto">Hora</p>
+      <button id="dialog-entrada" class="dialog-buttons">Entrada</button>
+      <button id="dialog-saida" class="dialog-buttons">Saida</button>
+      <button id="dialog-fechar">&#10006</button>
+    </div>
+  </dialog>
 
 </body>
+
 </html>
 
 <script src="../js/index.js"></script>
