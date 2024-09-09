@@ -5,7 +5,7 @@ function getUserLocation() {
             "long": position.coords.longitude
         }
 
-        locationUser = userLocation;
+        return userLocation;
     });
 }
 
@@ -29,12 +29,12 @@ function userDenied() {
 
 const btnDialogEntrada = document.getElementById("dialog-entrada");
 btnDialogEntrada.addEventListener("click", () => {
-    console.log(getObjectRegister("entrada"));
+    saveRegisterLocalStorage(JSON.stringify(getObjectRegister("entrada")));
 })
 
 const btnDialogSaida = document.getElementById("dialog-saida");
 btnDialogSaida.addEventListener("click", () => {
-    console.log(getObjectRegister("saida"))
+    saveRegisterLocalStorage(JSON.stringify(getObjectRegister("saida")));
 })
 
 function getObjectRegister(registerType) {
@@ -48,6 +48,10 @@ function getObjectRegister(registerType) {
     }
 
     return ponto;
+}
+
+function saveRegisterLocalStorage(register) {
+    localStorage.setItem("register", register)
 }
 
 function updateContentHour() {
