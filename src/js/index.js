@@ -10,6 +10,7 @@ btnRegistrarPonto.addEventListener("click", register);
 diaSemana.textContent = getWeekDay();
 dataAtual.textContent = getCurrentDate();
 
+
 const dialogPonto = document.getElementById("dialog-ponto");
 
 const dialogData = document.getElementById("dialog-data");
@@ -156,20 +157,28 @@ function register() {
 
 
 function updateContentHour() {
+    dialogHora.textContent = getCurrentTime();
     horaAtual.textContent = getCurrentTime();
 }
 
 // Retorna a hora atual (hora/minuto/segundo)
 function getCurrentTime() {
     const date = new Date();
-    return String(date.getHours()).padStart(2, '0') + ":" + String(date.getMinutes()).padStart(2, '0') + ":" + String(date.getSeconds()).padStart(2, '0');
+    const Hour = String(date.getHours()).padStart(2, '0');
+    const Minute = String(date.getMinutes()).padStart(2, '0');
+    const Seconds = String(date.getSeconds()).padStart(2, '0');
+
+    return Hour + ":" + Minute + ":" + Seconds;    
 }
 
 // Retorna a data atual no padrão dd/mm/aaaa
 function getCurrentDate() {
-    const date = new Date(); 
-    let mes = date.getMonth() + 1;
-    return String(date.getDate()).padStart(2, '0') + "/" + String(mes).padStart(2, '0') + "/" +  String(date.getFullYear()).padStart(2, '0');
+    const date = new Date();
+    const Day = String(date.getDate()).padStart(2, '0');
+    const Month = String((date.getMonth() + 1)).padStart(2, '0');
+    const Year = date.getFullYear();
+
+    return Day + "/" + Month + "/" + Year;
 }
 
 function getWeekDay() {
@@ -181,7 +190,3 @@ function getWeekDay() {
 
 updateContentHour();
 setInterval(updateContentHour, 1000);
-
-console.log(getCurrentTime());
-console.log(getCurrentDate());
-console.log(getWeekDay());

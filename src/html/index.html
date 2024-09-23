@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Ponto Eletrônico</title>
-    <link rel="stylesheet" href="../style/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Ponto Eletrônico</title>
+  <link rel="stylesheet" href="../style/style.css">
 </head>
+
 <body>
-    <div class="data-hora">
-        <p id="dia-semana"></p>
-        <p id="data-atual"></p>
-        <p id="hora-atual"></p>
-        <button id="btn-registrar-ponto">Registrar ponto</button>
+  <audio autoplay loop>
+    <source src="../assets/audios/thinking-out-loud.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+  <div class="data-hora">
+    <p id="dia-semana"></p>
+    <p id="data-atual"></p>
+    <p id="hora-atual"></p>
+    <button id="btn-registrar-ponto">Registrar ponto</button>
+  </div>
+
+  <dialog id="dialog-ponto">
+    <div class="dialog-content">
+      <p id="dialog-data">Data</p>
+      <p id="dialog-hora">Hora</p>
     </div>
+    <div class="dialog-buttons">
+    <select name="register-type" id="register-type">
+      <option value="entrada">Entrada</option>
+      <option value="intervalo">Intervalo</option>
+      <option value="volta-intervalo">Volta Intervalo</option>
+      <option value="saida">Saída</option>
+    </select>
+    <button id="btn-dialog-register">Registrar</button>
+    <button id="dialog-fechar">X</button>
+  </div>
+  </dialog>
 
-    <dialog id="dialog-ponto">
-      <div class="dialog-content">
-        <p id="dialog-data">Data</p>
-        <p id="dialog-hora">Hora</p>
-      </div>
-        <select name="register-type" id="register-type">
-            <option value="entrada">Entrada</option>
-            <option value="intervalo">Intervalo</option>
-            <option value="volta-intervalo">Volta Intervalo</option>
-            <option value="saida">Saída</option>
-        </select>
-        <button id="btn-dialog-register">Registrar</button>
-        <button id="dialog-fechar">X</button>
-    </dialog>
-
-    <script src="../js/index.js"></script>
+  <script src="../js/index.js"></script>
 </body>
+
 </html>
